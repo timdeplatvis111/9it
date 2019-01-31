@@ -1,7 +1,7 @@
 <html lang="nl">
 
 <?php
-//starts the session
+//Starts the session
 session_start();
 ?>
 
@@ -18,7 +18,8 @@ session_start();
     <link rel="stylesheet" href="css/AddPost.css">
 
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>

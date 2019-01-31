@@ -1,6 +1,8 @@
 <?php
 // Include header!! 
 include "core/header.php";
+
+
 ?>
 
 <div id="login">
@@ -20,3 +22,7 @@ include "core/header.php";
         </form>
     </div>
 </div>
+
+<?php
+}
+?>

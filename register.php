@@ -2,6 +2,24 @@
 // Include header!! 
 include "core/header.php";
 include "core/inc_database.php";
+
+if (isset($_SESSION['ID'])) {
+    ?>
+    
+        <!-- this is the page when you're logged uit. -->
+        <div id="index-container">
+    
+            <div id="post">
+                <h1>you're already logged in</h1>
+            </div>
+    
+            <div id="info">
+            </div>
+    
+        </div>
+    
+    <?php
+    } else {
 ?>
 
 <div id="index-container">
@@ -15,17 +33,21 @@ include "core/inc_database.php";
 
         <form method="POST" action="core/inc_register.php">
 
-            <label>Username</label>
-            <input type="text" placeholder="Username" name="Username" required>
+            <div id="UsernameInput">
+                <input id="RegisterInputs" type="text" placeholder="Username" name="Username" required>
+            </div>
 
-            <label>E-mail</label>
-            <input type="text" placeholder="E-mail" name="Email" required>
+            <div id="EmailInput">
+                <input id="RegisterInputs" type="text" placeholder="E-mail" name="Email" required>
+            </div>
 
-            <label>Description</label>
-            <input type="text" placeholder="Description" name="Description" required>
+            <div id="DescriptionInput">
+                <input id="RegisterInputs" type="text" placeholder="Description" name="Description" required>
+            </div>
 
-            <label>Password</label>
-            <input type="ww" placeholder="Password" name="Password">
+            <div id="PasswordInput">
+                <input id="RegisterInputs" type="ww" placeholder="Password" name="Password">
+            </div>
 
             <button type="submit" name="submit">Registreren</button>
 
@@ -35,50 +57,54 @@ include "core/inc_database.php";
 
 </div>
 
-<!-- Info -->
-<div id="info"></div>
+    <!-- Info -->
+    <div id="info">
 
-    <a href="AddPost.php">Add your Post today!!!</a>
+        <a href="AddPost.php">Add your Post today!!!</a>
 
-    <ul>
-        <li>Hot</li>
-        <li>Fresh</li>
-    </ul>
+        <ul>
+            <li>Hot</li>
+            <li>Fresh</li>
+        </ul>
 
-<?php
-    if (isset($_SESSION['Username'])) 
-    {
-        echo 'You are logged in as: '.$_SESSION['Username'];
-        echo '<form action="core/inc_logout.php" method="POST">
+    <?php
+        if (isset($_SESSION['Username'])) 
+        {
+            echo 'You are logged in as: '.$_SESSION['Username'];
+            echo '<form action="core/inc_logout.php" method="POST">
 
-        <button id="uitloggen" type="submit" name="submit">Logout</button>
-        </form>';
-    }
-    else
-    {
-        echo 'You can create an account <a href="register.php">Here </a>- Its free!';
-    
-?>    
-<!-- Login form -->
-    <div id="login">
-        <div id="login-container">
-            <form method="POST" action="core/inc_login.php">
+            <button id="uitloggen" type="submit" name="submit">Logout</button>
+            </form>';
+        }
+        else
+        {
+            echo 'You can create an account <a href="register.php">Here </a>- Its free!';
+        
+    ?>    
+    <!-- Login form -->
+        <div id="login">
+            <div id="login-container">
+                <form method="POST" action="core/inc_login.php">
 
-            <label>Username</label>
-            <input type="text" placeholder="Enter Username" name="Username" required>
+                <label>Username</label>
+                <input type="text" placeholder="Enter Username" name="Username" required>
 
-            <label>Password</label>
-            <input type="password" placeholder="Enter Password" name="Password" required>
+                <label>Password</label>
+                <input type="password" placeholder="Enter Password" name="Password" required>
 
-            <button type="submit" name="submit">Login</button>
+                <button type="submit" name="submit">Login</button>
 
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+
+    <?php
+
+    }
+
+?>
 
 <?php
-
-}
-
+    }
 ?>

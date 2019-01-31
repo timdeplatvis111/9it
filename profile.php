@@ -1,10 +1,31 @@
 <?php
 // Include header!! 
 include "core/header.php";
+
+//checks if the user is logged in
+if (!isset($_SESSION['ID'])) {
+?>
+
+    <!-- this is the page when you're logged out. -->
+    <div id="index-container">
+
+        <div id="post">
+            <h1>You need to be logged in for this page.</h1>
+        </div>
+
+        <div id="info">
+        </div>
+
+    </div>
+
+<?php
+} else {
+
 //getting UserID from user table
 $UserID = $_SESSION['ID'];
 ?>
 
+<!-- this is the page when you're logged in. -->
 <div id="index-container">
 
     <!-- Every post -->
@@ -49,3 +70,7 @@ $UserID = $_SESSION['ID'];
 </div>
 
 </body>
+
+<?php
+}
+?>

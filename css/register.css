@@ -6,9 +6,15 @@
 
 #register-container
 {
-    width: 87%;
+    width: 60%;
     height: 100%;
     margin: 0 auto;
+}
+
+#register h1
+{
+    text-align: center;
+    margin-bottom: 5%;
 }
 
 button 
@@ -21,12 +27,12 @@ button
 
 label
 {
-    float: left;
+    margin: 0 auto;
 }
 
 input 
 {
-    float: left;
+    margin: 0 auto;
     margin-right: 3%;
     margin-bottom: 5%;
 }
@@ -34,4 +40,37 @@ input
 ul 
 {
     margin-bottom: 5%;
+}
+
+#UsernameInput
+{
+    width: 100%;
+    height: 10%;
+    margin: 0 auto;
+}
+
+#EmailInput
+{
+    width: 100%;
+    height: 10%;
+    margin: 0 auto;
+}
+
+#DescriptionInput
+{
+    width: 100%;
+    height: 10%;
+    margin: 0 auto;
+}
+
+#PasswordInput
+{
+    width: 100%;
+    height: 10%;
+    margin: 0 auto;
+}
+
+#RegisterInputs
+{
+    width: 100%;
 }

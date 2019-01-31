@@ -26,5 +26,13 @@ if ($result->num_rows > 0)
                 echo '<p id="PostContainerUserID"> UserID:'.$PostUserID.'</p> </div>';
             echo '</div>';
         echo '</div>';
+
+        ?>
+
+        <form method="post" action="core/inc_PostDelete.php?id=<?php echo $PostID?> ">
+            <button type="submit" name="submit">Verwijder Post</button></a>
+        </form>
+
+        <?php
     }
 }

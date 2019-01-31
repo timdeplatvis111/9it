@@ -2,7 +2,28 @@
 // Include header en de database connectie test
 include "core/header.php";
 include "core/inc_database.php";
+
+//checks if the user is logged in
+if (!isset($_SESSION['ID'])) {
+
 ?>
+
+    <!-- this is the page when you're logged out. -->
+    <div id="index-container">
+
+        <div id="post">
+            <h1>You need to be logged in for this page.</h1>
+        </div>
+
+        <div id="info">
+        </div>
+
+    </div>
+
+<?php
+} else {
+?>
+
 <div id="index-container">
 
     <div id="post">
@@ -13,7 +34,7 @@ include "core/inc_database.php";
             <input type="text" placeholder="Tim is gay" name="Titel" required>
 
             <label>Image</label>
-            <input type="text" placeholder="your image" name="Image" required>
+            <input type="text" placeholder="TimIsGay.png" name="Image" required>
 
             <button type="submit" name="submit">Post your post!</button>
         </form>
@@ -58,4 +79,4 @@ include "core/inc_database.php";
         <?php
 
     }
-    
+}
